@@ -15,9 +15,11 @@
  * DO NOT EDIT
  */
 
+//four data structures needed:Astd::map<std::string, std::set<Product*
 
 class DataStore {
 public:
+
     virtual ~DataStore() { }
 
     /**

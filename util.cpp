@@ -3,6 +3,7 @@
 #include <cctype>
 #include <algorithm>
 #include "util.h"
+#include <string>
 
 using namespace std;
 std::string convToLower(std::string src)
@@ -16,16 +17,51 @@ std::string convToLower(std::string src)
 std::set<std::string> parseStringToWords(string rawWords)
 {
 
+std::set<std::string> newkeywords; 
+std::stringstream readrawwords(rawWords); 
 
+while(readrawwords >> rawWords){
+std::string newword; 
 
+    for(std::string::iterator it=rawWords.begin(); it!=rawWords.end(); ++it){
+        if(isalnum(*it)){
+            newword += tolower(*it); 
 
+        }
+        else{
+          if(newword.length() >= 2){
+            newkeywords.insert(newword); 
+          }
+            newword.clear(); 
+            
+        }
 
+        } 
 
+         
+        if(newword.length() >= 2)
+            {
+                newkeywords.insert(newword); 
 
-
-
-
+            }
+        
+    }
+return newkeywords; 
 }
+
+
+/*Complete the parseStringToWords() in util.cpp according to the 
+specification given above for taking a string of many words and 
+splitting them into individual keywords (split at punctuation, 
+with at least 2 character words)*/
+
+
+
+
+
+
+
+
 
 /**************************************************
  * COMPLETED - You may use the following functions

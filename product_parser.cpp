@@ -130,6 +130,20 @@ std::string ProductBookParser::categoryID()
  */
 Product* ProductBookParser::makeProduct()
 {
+/*product_parser.cpp - Nearly Complete!
+ The code for the base class ProductParser is complete 
+ and does not need to be modified. For each of the derived types,
+  you will need to complete the makeProduct() member function of
+   each of these classes to instantiate an appropriate product object
+    for the given category.*/ 
+
+
+
+Book *BookParser = new Book(categoryID(), prodName_, price_, qty_, isbn_, author_); 
+
+return BookParser; 
+
+
 
 
 }
@@ -185,6 +199,9 @@ std::string ProductClothingParser::categoryID()
  */
 Product* ProductClothingParser::makeProduct()
 {
+    Clothing *ClothingParser = new Clothing(categoryID(), prodName_, price_, qty_, size_, brand_); 
+
+return ClothingParser; 
 
 
 
@@ -245,6 +262,7 @@ std::string ProductMovieParser::categoryID()
  */
 Product* ProductMovieParser::makeProduct()
 {
+Movie *MovieParser = new Movie(categoryID(), prodName_, price_, qty_, genre_, rating_); 
 
-
+return MovieParser;  
 }
